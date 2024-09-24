@@ -1,6 +1,8 @@
 package com.hackafun.foodliner.models;
 
-public class CalculateResponse {
+import java.io.Serializable;
+
+public class CalculateResponse implements Serializable {
 
     private double totalCalories;
     private double totalCarbonEmission;

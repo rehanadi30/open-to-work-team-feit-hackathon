@@ -1,8 +1,9 @@
 package com.hackafun.foodliner.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GenerateRecipeResponse {
+public class GenerateRecipeResponse implements Serializable {
 
     private String raw_response;
     private StructuredRecipe structured_recipe;

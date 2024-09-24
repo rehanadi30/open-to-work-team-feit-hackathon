@@ -1,8 +1,9 @@
 package com.hackafun.foodliner.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GenerateFoodResponse {
+public class GenerateFoodResponse implements Serializable {
     private List<String> items;
 
     public GenerateFoodResponse(List<String> items) {
