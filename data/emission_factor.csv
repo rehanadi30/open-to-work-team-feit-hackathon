@@ -1,0 +1,45 @@
+Food Items,Emission Factor
+Cereal,1000
+Wheat,1000
+Rice,2750
+Rye,1000
+Oats,1000
+Starchy roots,500
+Potatoes,164
+Pulses,640
+Bean,1130
+Oil crop,3530
+Olives,3530
+Vegetable,250
+Tomato,250
+Onion,250
+Fruit,70
+"Oranges, Mandarines",70
+Lemon,70
+Banana,70
+Apple,70
+Grape,70
+Alcoholic Beverage,4813
+Wine,2240
+Milk,1138
+Bread,983
+Dairy,1138
+Cooked with meat,5370
+Other cooked food,2513
+Deserts,3700
+Other,1000
+Beef,18210
+Chicken,4020
+Egg,3020
+Fish,2830
+Pork,4970
+Lamb,22960
+Raw Sugar,311000
+Beverages,1500
+Beer,5300
+Cream,78000
+Butter,730000
+Cheddar Cheese,8600
+Mozarella cheese,7280
+Fishing,5270
+Mutton meat,45540

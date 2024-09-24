@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from tools.detection_pure import generate_food_item
+from tools.calculation import carbon_calculation,calories_calculation
 import re
 
 app = Flask(__name__)
@@ -7,6 +9,49 @@ app = Flask(__name__)
 # Load the T5 recipe generation model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained("flax-community/t5-recipe-generation")
 model = AutoModelForSeq2SeqLM.from_pretrained("flax-community/t5-recipe-generation")
+
+# Generate food from input image
+@app.route('/generate-food', methods=['POST'])
+def generate_food_from_image():
+    
+    food_image_file = request.files.get('image')
+    if not food_image_file:
+        return jsonify({"error": "No image provided"}), 400
+
+    try:
+        food_items = generate_food_item(food_image_file)
+        response = {
+            'items': food_items
+        }
+        # Return the JSON response
+        return jsonify(response)
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
+# Calculate carbon emission and calories
+@app.route('/calculation', methods=['POST'])
+def generate_food_from_image():
+    
+    #food_items = request.get_json()
+    #if not food_items:
+    #    return jsonify({"error": "Invalid input"}), 400
+    try:
+        food_items = ['potato', 'banana', 'onion', 'milk']
+
+        carbon_emission = carbon_calculation(food_items)
+        calories = calories_calculation(food_items)
+
+        response = {
+            'carbon_emission': carbon_emission,
+            'calories': calories
+        }
+        # Return the JSON response
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
 
 @app.route('/generate-recipe', methods=['POST'])
 def generate_recipe():
