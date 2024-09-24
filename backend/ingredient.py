@@ -5,12 +5,20 @@ from tools.detection_pure import generate_food_item
 from tools.calculation import carbon_calculation,calories_calculation
 import re
 import io
+import logging
 
 app = Flask(__name__)
+
+# Set up basic logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Load the T5 recipe generation model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained("flax-community/t5-recipe-generation")
 model = AutoModelForSeq2SeqLM.from_pretrained("flax-community/t5-recipe-generation")
+
+# Function to log request details
+def log_request_info():
+    logging.info(f"Request Method: {request.method}, Request Path: {request.path}, Request Data: {request.get_data(as_text=True)}")
 
 # Generate food from input image
 @app.route('/generate-food', methods=['POST'])
@@ -39,30 +47,40 @@ def generate_food_from_image():
         return jsonify(response), 200
     
     except Exception as e:
+        logging.error(f"An error occurred: {str(e)}")
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-
-# Calculate carbon emission and calories
+    
 @app.route('/calculation', methods=['POST'])
 def carbon_calories_calculation():
-    
-    food_items = request.get_json()
-    if not food_items:
-        return jsonify({"error": "Invalid input"}), 400
     try:
-        #DUMMY 
+        food_data = request.get_json()
+        
+        # Validate that the incoming structure has the expected key
+        if not food_data or not isinstance(food_data, dict) or 'foodItems' not in food_data:
+            return jsonify({"error": "Invalid input, expected a JSON object with a 'foodItems' key."}), 400
 
+        food_items = food_data['foodItems']  # Extract the list of food items
+        
+        # Validate that food_items is a list
+        if not isinstance(food_items, list):
+            return jsonify({"error": "Invalid input, expected 'foodItems' to be a list."}), 400
+
+        # Calculate carbon emissions and calories
         carbon_emission = carbon_calculation(food_items)
         calories = calories_calculation(food_items)
 
         response = {
-            'total carbon emission': carbon_emission,
-            'total calories': calories
+            'totalCarbonEmission': carbon_emission,
+            'totalCalories': calories
         }
-        # Return the JSON response
         return jsonify(response)
 
     except Exception as e:
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+        logging.error(f"An error occurred: {str(e)}")  # Log the error
+        return jsonify({"error": "An internal server error occurred."}), 500
+
+
+
 
 
 @app.route('/generate-recipe', methods=['POST'])

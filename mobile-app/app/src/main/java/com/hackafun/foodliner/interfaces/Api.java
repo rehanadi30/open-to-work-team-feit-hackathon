@@ -28,7 +28,7 @@ public interface Api {
             @Body IngredientsRequest ingredientsRequest
     );
 
-    @POST("calculate")
+    @POST("calculation")
     Call<CalculateResponse> calculate(
             @Body CalculateRequest calculateRequest
     );

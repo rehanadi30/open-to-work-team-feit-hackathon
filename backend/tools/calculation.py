@@ -23,8 +23,8 @@ def carbon_calculation(food_masses):
     total_emission = 0
 
     for item in food_masses:
-        food_name = item['Food']
-        mass = item['Mass (g)'] / 1000
+        food_name = item['food']
+        mass = item['mass'] / 1000
 
         # Normalize the food name for comparison
         normalized_food_name = food_name.lower()
@@ -46,8 +46,8 @@ def calories_calculation(food_masses):
     total_calories = 0
 
     for item in food_masses:
-        food_name = item['Food']
-        mass = item['Mass (g)']
+        food_name = item['food']
+        mass = item['mass']
 
         # Normalize the food name for comparison
         normalized_food_name = food_name.lower()

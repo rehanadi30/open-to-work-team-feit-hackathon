@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.hackafun.foodliner.activity.NextActivity;
 import com.hackafun.foodliner.interfaces.Api;
 import com.hackafun.foodliner.models.GenerateFoodResponse;
 import com.hackafun.foodliner.utils.RetrofitClient;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private Uri imageUri;
 
+    Button buttonUseImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         Button buttonCapturePhoto = findViewById(R.id.buttonCapturePhoto);
         Button buttonUploadPhoto = findViewById(R.id.buttonUploadPhoto);
-        Button buttonUseImage = findViewById(R.id.buttonUploadToServer);
+        buttonUseImage = findViewById(R.id.buttonUploadToServer);
 
         // Handle button click to capture photo
         buttonCapturePhoto.setOnClickListener(view -> {
@@ -105,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
                         // Handle successful response
                         GenerateFoodResponse generateFoodResponse = response.body();
                         /* Do something with the response (e.g., display data) */
+                        Intent i = new Intent(getApplicationContext(), NextActivity.class);
+                        i.putExtra("generatefoodresponse", generateFoodResponse);
+                        startActivity(i);
+
                     } else {
                         // Handle failure
                         System.out.println("Upload failed. Response code: " + response.code());

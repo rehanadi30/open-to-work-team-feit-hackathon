@@ -1,12 +1,33 @@
 package com.hackafun.foodliner.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
-public class GenerateRecipeResponse implements Serializable {
+public class GenerateRecipeResponse implements Parcelable {
 
     private String raw_response;
     private StructuredRecipe structured_recipe;
+
+    protected GenerateRecipeResponse(Parcel in) {
+        raw_response = in.readString();
+    }
+
+    public static final Creator<GenerateRecipeResponse> CREATOR = new Creator<GenerateRecipeResponse>() {
+        @Override
+        public GenerateRecipeResponse createFromParcel(Parcel in) {
+            return new GenerateRecipeResponse(in);
+        }
+
+        @Override
+        public GenerateRecipeResponse[] newArray(int size) {
+            return new GenerateRecipeResponse[size];
+        }
+    };
 
     // Getters and Setters
     public String getRawResponse() {
@@ -23,6 +44,16 @@ public class GenerateRecipeResponse implements Serializable {
 
     public void setStructuredRecipe(StructuredRecipe structured_recipe) {
         this.structured_recipe = structured_recipe;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(raw_response);
     }
 
     // Inner class for structured recipe
