@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.hackafun.foodliner"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hackafun.foodliner"

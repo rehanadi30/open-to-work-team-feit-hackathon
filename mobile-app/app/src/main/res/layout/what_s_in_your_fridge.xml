@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="800dp"
+  android:background="@drawable/drawable_shape">
+
+  <FrameLayout
+    android:layout_width="176dp"
+    android:layout_height="25dp"
+    android:layout_marginLeft="92dp"
+    android:layout_marginTop="724dp"
+    android:layout_gravity="top|left"
+    android:background="@drawable/drawable_shape_1">
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/drawable_shape_2"
+      android:scaleType="centerCrop" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="13dp"
+      android:layout_marginLeft="49dp"
+      android:layout_marginRight="49dp"
+      android:layout_marginTop="6dp"
+      android:layout_marginBottom="6dp"
+      android:gravity="center_horizontal|center_vertical"
+      android:includeFontPadding="false"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:text="Generate Recipes"
+      android:textColor="#FF000000"
+      android:textSize="9dp" />
+  </FrameLayout>
+
+  <ImageView
+    android:layout_width="36dp"
+    android:layout_height="21dp"
+    android:layout_marginLeft="297dp"
+    android:layout_marginTop="114dp"
+    android:layout_gravity="top|left"
+    android:background="@drawable/drawable_shape_3"
+    android:scaleType="centerInside" />
+
+  <FrameLayout
+    android:layout_width="262dp"
+    android:layout_height="21dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="114dp"
+    android:layout_gravity="top|left">
+
+    <ImageView
+      android:layout_width="15dp"
+      android:layout_height="15dp"
+      android:layout_marginLeft="241dp"
+      android:layout_marginRight="6dp"
+      android:layout_marginTop="3dp"
+      android:layout_marginBottom="3dp"
+      android:scaleType="centerInside"
+      android:src="@drawable/drawable_image_3" />
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/drawable_shape_4"
+      android:scaleType="centerCrop" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="13dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginBottom="4dp"
+      android:layout_gravity="left"
+      android:gravity="center"
+      android:includeFontPadding="false"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:text="Search for your ingredient here...."
+      android:textColor="#FF000000"
+      android:textSize="9dp" />
+  </FrameLayout>
+
+  <ImageView
+    android:layout_width="14.63dp"
+    android:layout_height="12.94dp"
+    android:layout_marginLeft="307.69dp"
+    android:layout_marginRight="37.69dp"
+    android:layout_marginTop="118.25dp"
+    android:layout_marginBottom="668.81dp"
+    android:scaleType="centerInside"
+    android:src="@drawable/drawable_image_4" />
+
+  <LinearLayout
+    android:layout_width="304dp"
+    android:layout_height="515dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginBottom="115dp"
+    android:layout_gravity="bottom|right"
+    android:gravity="left|top"
+    android:orientation="vertical">
+
+    <FrameLayout
+      android:layout_width="302dp"
+      android:layout_height="116dp"
+      android:layout_gravity="left">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginRight="131dp"
+        android:layout_marginTop="-0.5dp"
+        android:layout_marginBottom="-0.5dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Meat"
+        android:textColor="#FF000000"
+        android:textSize="13dp" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_shape_5"
+        android:scaleType="centerCrop" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_shape_6"
+        android:scaleType="centerCrop" />
+
+      <FrameLayout
+        android:layout_width="286dp"
+        android:layout_height="15.56dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="26dp"
+        android:layout_gravity="top|left">
+
+        <FrameLayout
+          android:layout_width="140dp"
+          android:layout_height="match_parent"
+          android:layout_gravity="left">
+
+          <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_shape_7"
+            android:scaleType="centerCrop" />
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_marginLeft="15.56dp"
+            android:layout_marginRight="14.64dp"
+            android:layout_marginTop="1.28dp"
+            android:layout_marginBottom="1.28dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Chicken Thighs (200g)"
+            android:textColor="#FF000000"
+            android:textSize="9dp" />
+
+          <ImageView
+            android:layout_width="10.97dp"
+            android:layout_height="10.74dp"
+            android:layout_marginLeft="7.8dp"
+            android:layout_marginTop="2.53dp"
+            android:layout_marginBottom="2.28dp"
+            android:layout_gravity="left"
+            android:scaleType="centerInside"
+            android:src="@drawable/drawable_image_5" />
+
+          <ImageView
+            android:layout_width="5.95dp"
+            android:layout_height="5.95dp"
+            android:layout_marginLeft="125.13dp"
+            android:layout_marginRight="8.92dp"
+            android:layout_marginTop="5.26dp"
+            android:layout_marginBottom="4.35dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/drawable_image_6" />
+        </FrameLayout>
+
+        <FrameLayout
+          android:layout_width="140dp"
+          android:layout_height="match_parent"
+          android:layout_gravity="right">
+
+          <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_shape_8"
+            android:scaleType="centerCrop" />
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_marginLeft="15.56dp"
+            android:layout_marginRight="14.64dp"
+            android:layout_marginTop="1.28dp"
+            android:layout_marginBottom="1.28dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Beef (180g)"
+            android:textColor="#FF000000"
+            android:textSize="9dp" />
+
+          <ImageView
+            android:layout_width="5.95dp"
+            android:layout_height="5.95dp"
+            android:layout_marginLeft="125.13dp"
+            android:layout_marginRight="8.92dp"
+            android:layout_marginTop="5.26dp"
+            android:layout_marginBottom="4.35dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/drawable_image_7" />
+
+          <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="top|left"
+            android:scaleType="centerInside"
+            android:src="@drawable/drawable_image_8" />
+        </FrameLayout>
+      </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="302dp"
+      android:layout_height="116dp"
+      android:layout_marginTop="17dp"
+      android:layout_gravity="right">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginRight="115dp"
+        android:layout_marginTop="-0.5dp"
+        android:layout_marginBottom="-0.5dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Vegetable"
+        android:textColor="#FF000000"
+        android:textSize="13dp" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_shape_9"
+        android:scaleType="centerCrop" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_shape_10"
+        android:scaleType="centerCrop" />
+
+      <FrameLayout
+        android:layout_width="140dp"
+        android:layout_height="15.56dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="top|left">
+
+        <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/drawable_shape_11"
+          android:scaleType="centerCrop" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="13dp"
+          android:layout_marginLeft="15.56dp"
+          android:layout_marginRight="14.64dp"
+          android:layout_marginTop="1.28dp"
+          android:layout_marginBottom="1.28dp"
+          android:gravity="center"
+          android:includeFontPadding="false"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:text="Potato (80g)"
+          android:textColor="#FF000000"
+          android:textSize="9dp" />
+
+        <ImageView
+          android:layout_width="5.95dp"
+          android:layout_height="5.95dp"
+          android:layout_marginLeft="125.13dp"
+          android:layout_marginRight="8.92dp"
+          android:layout_marginTop="5.26dp"
+          android:layout_marginBottom="4.35dp"
+          android:scaleType="centerInside"
+          android:src="@drawable/drawable_image_9" />
+
+        <ImageView
+          android:layout_width="10dp"
+          android:layout_height="11dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="114dp"
+          android:layout_marginTop="2dp"
+          android:layout_marginBottom="2.56dp"
+          android:scaleType="centerInside"
+          android:src="@drawable/drawable_image_10" />
+      </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginLeft="2dp"
+      android:layout_marginTop="17dp"
+      android:layout_weight="1">
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_shape_12"
+        android:scaleType="centerCrop" />
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_marginLeft="139dp"
+        android:layout_marginRight="133dp"
+        android:layout_marginTop="-0.5dp"
+        android:layout_marginBottom="-0.5dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Fruit"
+        android:textColor="#FF000000"
+        android:textSize="13dp" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_shape_13"
+        android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="302dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="17dp"
+      android:layout_gravity="left"
+      android:layout_weight="1">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginRight="91dp"
+        android:layout_marginTop="-0.5dp"
+        android:layout_marginBottom="-0.5dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Other Ingredients"
+        android:textColor="#FF000000"
+        android:textSize="13dp" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_shape_14"
+        android:scaleType="centerCrop" />
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_shape_15"
+        android:scaleType="centerCrop" />
+    </FrameLayout>
+  </LinearLayout>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="21dp"
+      android:layout_gravity="top|left"
+      android:layout_marginLeft="81dp"
+      android:layout_marginTop="80dp"
+      android:layout_marginBottom="-1dp"
+      android:gravity="center_horizontal|center_vertical"
+      android:includeFontPadding="false"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:text="What’s left in your fridge?"
+      android:textColor="#FF000000"
+      android:textSize="16dp" />
+</FrameLayout>
