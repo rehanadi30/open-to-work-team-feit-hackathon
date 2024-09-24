@@ -9,37 +9,62 @@ def singularize(word):
     return singular_forms[0] if singular_forms else word
 
 # Load the carbon emission dataset
-carbon_df = pd.read_csv('../data/emission_factor.csv')
+carbon_df = pd.read_csv('data/emission_factor.csv')
 carbon_df['Food Items'] = carbon_df['Food Items'].str.lower()
 
 # Load the calories dataset
-calories_df = pd.read_csv('../data/calories.csv')
+calories_df = pd.read_csv('data/calories.csv')
 calories_df['FoodItem'] = calories_df['FoodItem'].str.lower().apply(singularize)
+calories_df['Cals_per100grams'] = calories_df['Cals_per100grams'].str.replace(' cal', '').str.strip().astype(int)
 
 
-def carbon_calculation(items_to_check):
+def carbon_calculation(food_masses):
+    
+    total_emission = 0
 
-    # Normalize the given list
-    normalized_items = [item.lower() for item in items_to_check]
+    for item in food_masses:
+        food_name = item['Food']
+        mass = item['Mass (g)'] / 1000
 
-    # Calculate the total emission for the given items
-    total_emission = carbon_df[carbon_df['Food Items'].isin(normalized_items)]['Emission Factor'].sum()
-
-    # Display the result
-    print(f"Total carbon emission: {total_emission}")
+        # Normalize the food name for comparison
+        normalized_food_name = food_name.lower()
+        
+        # Get the calorie content per 100 grams
+        emission_factor = carbon_df[carbon_df['Food Items'].str.lower() == normalized_food_name]['Emission Factor']
+        
+        if not emission_factor.empty:
+            # Calculate calories based on the mass
+            total_emission += emission_factor.values[0] * mass
+    
+    print(f"Total carbon emission for your food: {total_emission:.2f}")
 
     return total_emission
 
 
-def calories_calculation(items_to_check):
+def calories_calculation(food_masses):
+    
+    total_calories = 0
 
-    # Normalize the given list
-    normalized_items = [item.lower() for item in items_to_check]
+    for item in food_masses:
+        food_name = item['Food']
+        mass = item['Mass (g)']
 
-    total_calories = calories_df[calories_df['FoodItem'].isin(normalized_items)]['Cals_per100grams'].str.replace(' cal', '').astype(int).sum()
-    print(f"Total calories for specified food items: {total_calories}")
+        # Normalize the food name for comparison
+        normalized_food_name = food_name.lower()
+        
+        # Get the calorie content per 100 grams
+        calorie_per_100g = calories_df[calories_df['FoodItem'].str.lower() == normalized_food_name]['Cals_per100grams']
+        
+        if not calorie_per_100g.empty:
+            # Calculate calories based on the mass
+            calories_for_item = (calorie_per_100g.values[0] / 100) * mass
+            total_calories += calories_for_item
+    
+    print(f"Total calories for your food: {total_calories:.2f}")
 
     return total_calories
+
+
 
 
 

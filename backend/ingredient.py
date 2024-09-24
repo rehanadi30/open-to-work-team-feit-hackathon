@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from PIL import Image
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from tools.detection_pure import generate_food_item
 from tools.calculation import carbon_calculation,calories_calculation
 import re
+import io
 
 app = Flask(__name__)
 
@@ -14,38 +16,47 @@ model = AutoModelForSeq2SeqLM.from_pretrained("flax-community/t5-recipe-generati
 @app.route('/generate-food', methods=['POST'])
 def generate_food_from_image():
     
-    food_image_file = request.files.get('image')
+    food_image_file = request.files.get("image")
     if not food_image_file:
         return jsonify({"error": "No image provided"}), 400
 
     try:
-        food_items = generate_food_item(food_image_file)
+        # Read the image file into a byte stream
+        image_stream = io.BytesIO(food_image_file.read())
+        # Open the image using PIL
+        image = Image.open(image_stream)
+        
+        # Convert the image to RGB if it is in RGBA mode
+        if image.mode == 'RGBA':
+            image = image.convert('RGB')
+
+        food_items = generate_food_item(image)
+        
         response = {
             'items': food_items
         }
         # Return the JSON response
-        return jsonify(response)
+        return jsonify(response), 200
     
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
 # Calculate carbon emission and calories
 @app.route('/calculation', methods=['POST'])
-def generate_food_from_image():
+def carbon_calories_calculation():
     
     food_items = request.get_json()
     if not food_items:
         return jsonify({"error": "Invalid input"}), 400
     try:
         #DUMMY 
-        food_items = ['potato', 'banana', 'onion', 'milk']
 
         carbon_emission = carbon_calculation(food_items)
         calories = calories_calculation(food_items)
 
         response = {
-            'carbon_emission': carbon_emission,
-            'calories': calories
+            'total carbon emission': carbon_emission,
+            'total calories': calories
         }
         # Return the JSON response
         return jsonify(response)
