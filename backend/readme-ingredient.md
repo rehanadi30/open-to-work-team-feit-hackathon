@@ -1,11 +1,13 @@
-to install run this command
+# Installation
+run the command below to install:
     
     python ingredient.py
 
 
+# API prompt command
 you can access the APIs from (use POST) as below:
     
---------------------- GENERATE RECIPE -----------------------------
+############################# GENERATE RECIPE #####################################
 
     http://127.0.0.1:5000/generate-recipe'
 
@@ -14,14 +16,14 @@ you can access the APIs from (use POST) as below:
     }
 
 
---------------------- GENERATE FOOD FROM IMAGES -----------------------------
+####################### GENERATE FOOD FROM IMAGES ###############################
 
     http://127.0.0.1:5000/generate-food'
 
     [Insert any food image with key 'image']
 
 
---------------------- CALCULATE CARBON / CALORIES -----------------------------
+####################### CALCULATE CARBON / CALORIES ###############################
 
     http://127.0.0.1:5000/calculation'
 
