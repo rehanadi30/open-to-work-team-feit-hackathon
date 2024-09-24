@@ -33,10 +33,11 @@ def generate_food_from_image():
 @app.route('/calculation', methods=['POST'])
 def generate_food_from_image():
     
-    #food_items = request.get_json()
-    #if not food_items:
-    #    return jsonify({"error": "Invalid input"}), 400
+    food_items = request.get_json()
+    if not food_items:
+        return jsonify({"error": "Invalid input"}), 400
     try:
+        #DUMMY 
         food_items = ['potato', 'banana', 'onion', 'milk']
 
         carbon_emission = carbon_calculation(food_items)
