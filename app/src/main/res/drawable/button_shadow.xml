@@ -1,0 +1,17 @@
+<!-- res/drawable/button_shadow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid shadow layer -->
+    <item android:top="2dp" android:left="2dp"> <!-- Adjusting the offset -->
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#FF000000" /> <!-- Solid black shadow color -->
+        </shape>
+    </item>
+    <!-- Button layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#FFFFFF" /> <!-- Button color -->
+        </shape>
+    </item>
+</layer-list>
